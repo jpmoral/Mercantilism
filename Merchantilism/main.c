@@ -73,6 +73,8 @@ void game (void) {
     
     char choice = '\0';
     char *valid_choices = VALID_LOCATION_CHOICES;
+    END_TURN end_turn;
+    GAME_STATE game_state = ONGOING;
     
     while (choice != 'Q') {
         
