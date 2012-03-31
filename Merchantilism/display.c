@@ -51,7 +51,7 @@ void display_help(void) {
 void display_destination_choice_menu(LOCATION *loc_array[],int number_of_locations) {
     
     printf("\n");
-    printf("[B}ank\n");
+    printf("[B]ank\n");
     int i;
     for (i = 0; i < number_of_locations; i++) {
         printf("%s\n",loc_array[i]->menu_name);
