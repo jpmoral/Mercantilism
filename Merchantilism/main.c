@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 #include "Constants.h"
 #include "player_and_locations.h"
 #include "display.h"
@@ -18,10 +19,11 @@ void game(void);
 int main (int argc, const char * argv[]) {
     
     char choice = '\0';
+    char *valid_choices = VALID_MAIN_MENU_CHOICES;
     
     display_main_menu();
     
-    while (choice != 'P' && choice != 'H' && choice != 'E') {
+    while (!strpbrk(valid_choices, &choice)) {
         choice = getchar();
         choice = toupper(choice);
     }
