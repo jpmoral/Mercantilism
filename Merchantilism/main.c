@@ -55,7 +55,7 @@ void game (void) {
     PLAYER *player = (PLAYER *)malloc(sizeof(*player));
     LOCATION *red = (LOCATION *)malloc(sizeof(*red)), *azure = (LOCATION *)malloc(sizeof(*azure)), *emerald = (LOCATION *)malloc(sizeof(*emerald)), *grey = (LOCATION *)malloc(sizeof(*grey)), *pirate = (LOCATION *)malloc(sizeof(*pirate));
     LOCATION *loc_array[] = {red, azure, emerald, grey, pirate};
-    
+        
     initialize_player(player);
     initialize_locations(loc_array, NUMBER_OF_LOCATIONS);
     
@@ -80,19 +80,19 @@ void game (void) {
                 end_turn = enter_bank(player);
                 break;
             case 'R':
-                
+                end_turn = enter_location(player, loc_array[0]);
                 break;
             case 'A':
-                
+                end_turn = enter_location(player, loc_array[1]);
                 break;
             case 'E':
-                
+                end_turn = enter_location(player, loc_array[2]);
                 break;
             case 'G':
-                
+                end_turn = enter_location(player, loc_array[3]);
                 break;
             case 'P':
-                
+                end_turn = enter_location(player, loc_array[4]);
                 break;
             case 'Q':
                 printf("Goodbye!\n");
@@ -101,7 +101,7 @@ void game (void) {
         }
         
         if (end_turn == YES) {
-            // update game data
+            updateGameData(player, loc_array);
         }
     }
 }
