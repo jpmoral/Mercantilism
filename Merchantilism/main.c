@@ -138,6 +138,22 @@ END_TURN enter_bank(PLAYER *player) {
         choice = toupper(choice);
     }
     
+    switch (choice) {
+        case 'L':
+            
+            return YES;
+            break;
+        case 'P':
+            
+            return YES;
+            break;
+        case 'M':
+            
+            return NO;
+            break;
+    }
+    
+    return NO;
 }
 
 END_TURN enter_location(PLAYER *player, LOCATION *location) {
