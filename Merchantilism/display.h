@@ -12,6 +12,6 @@
 #include "player_and_locations.h"
 
 void display_player_profile(PLAYER *);
-
+void display_main_menu(void);
 
 #endif

@@ -29,3 +29,13 @@ void display_player_profile(PLAYER *player) {
     printf("GEM: %d\n",player->gem);
     printf("========================\n");
 }
+
+void display_main_menu(void) {
+    
+    system("clear");
+    printf("\n\n\n\n");
+    printf("\t\t\t     MERCHANTILISM\n\n\n");
+    printf("\t\t\t [P]lay the game\n\n");
+    printf("\t\t\t [H]ow to play\n\n");
+    printf("\t\t\t [E]xit\n");
+}
