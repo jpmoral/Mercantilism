@@ -15,6 +15,8 @@
 #include "display.h"
 
 void game(void);
+void enter_bank(PLAYER *);
+void enter_location(PLAYER *, LOCATION *);
 
 int main (int argc, const char * argv[]) {
     
@@ -86,4 +88,12 @@ void game (void) {
             return;
             break;
     }
+}
+
+void enter_bank(PLAYER *player) {
+    
+}
+
+void enter_location(PLAYER *player, LOCATION *location) {
+    
 }
