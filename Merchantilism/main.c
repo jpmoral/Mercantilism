@@ -27,8 +27,8 @@ typedef enum {
 
 void game(void);
 void help(void);
-void enter_bank(PLAYER *);
-void enter_location(PLAYER *, LOCATION *);
+END_TURN enter_bank(PLAYER *);
+END_TURN enter_location(PLAYER *, LOCATION *);
 void consume_newline(void);
 
 int main (int argc, const char * argv[]) {
@@ -120,7 +120,7 @@ void help(void) {
     c = getchar();
 }
 
-void enter_bank(PLAYER *player) {
+END_TURN enter_bank(PLAYER *player) {
     
     display_player_profile(player);
     display_bank_actions_menu();
@@ -136,7 +136,7 @@ void enter_bank(PLAYER *player) {
     
 }
 
-void enter_location(PLAYER *player, LOCATION *location) {
+END_TURN enter_location(PLAYER *player, LOCATION *location) {
     
 }
 
