@@ -15,6 +15,7 @@
 #include "display.h"
 
 void game(void);
+void help(void);
 void enter_bank(PLAYER *);
 void enter_location(PLAYER *, LOCATION *);
 void consume_newline(void);
@@ -93,6 +94,14 @@ void game (void) {
             return;
             break;
     }
+}
+
+void help(void) {
+    
+    display_help();
+    consume_newline();
+    char c;
+    c = getchar();
 }
 
 void enter_bank(PLAYER *player) {
