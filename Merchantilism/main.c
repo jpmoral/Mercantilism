@@ -27,7 +27,7 @@ int main (int argc, const char * argv[]) {
         choice = getchar();
         choice = toupper(choice);
     }
-        
+    
     switch(choice){
         case 'P':
             game();
@@ -37,12 +37,13 @@ int main (int argc, const char * argv[]) {
             break;
         case 'Q':
             printf("Goodbye!\n");
-        break;}
+        break;
+    }
     
     return 0;
 }
 
-void game () {
+void game (void) {
     
     PLAYER *player = (PLAYER *)malloc(sizeof(PLAYER));
     LOCATION *red = (LOCATION *)malloc(sizeof(PLAYER)), *azure = (LOCATION *)malloc(sizeof(PLAYER)), *emerald = (LOCATION *)malloc(sizeof(PLAYER)), *grey = (LOCATION *)malloc(sizeof(PLAYER)), *pirate = (LOCATION *)malloc(sizeof(PLAYER));
