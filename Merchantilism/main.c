@@ -89,7 +89,7 @@ void game (void) {
         
         switch(choice){
             case 'B':
-                enter_bank(player);
+                end_turn = enter_bank(player);
                 break;
             case 'R':
                 
