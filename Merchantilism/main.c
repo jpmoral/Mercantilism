@@ -14,6 +14,17 @@
 #include "player_and_locations.h"
 #include "display.h"
 
+typedef enum {
+    NO,
+    YES
+} END_TURN;
+
+typedef enum {
+    ONGOING,
+    WIN,
+    LOSS
+} GAME_STATE;
+
 void game(void);
 void help(void);
 void enter_bank(PLAYER *);
