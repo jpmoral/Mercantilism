@@ -40,20 +40,34 @@ void display_main_menu(void) {
     printf("\t\t\t [Q]uit\n");
 }
 
+void display_help(void) {
+    
+    system("clear");
+    printf("Instructions on how to play the game:\n");
+    printf("Try to beat the game HEHE\n");
+    printf("Press ENTER to continue.");
+}
+
 void display_destination_choice_menu(LOCATION *loc_array[],int number_of_locations) {
     
-    printf("\n\n");
+    printf("\n");
     printf("[B}ank\n");
     int i;
     for (i = 0; i < number_of_locations; i++) {
         printf("%s\n",loc_array[i]->menu_name);
     }
-    printf("[Q]uit\n");
-    printf("\n\nWhere do you want to go?: ");
+    printf("[Q]uit\n\n");
+    printf("Where do you want to go?: ");
 }
 
 void display_bank_actions_menu(void) {
     
+    printf("\n");
+    printf("You are at the Bank\n\n"); 
+    printf("[L]OAN\n");
+    printf("[P]AY DEBT\n");
+    printf("[M]AIN MENU\n\n");
+    printf("What would you like to do?: ");
 }
 
 void display_location_actions_menu(LOCATION *location) {
