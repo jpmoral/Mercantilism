@@ -34,6 +34,29 @@ void initialize_locations(LOCATION *loc_array[], int number_of_locations) {
     loc_array[0]->silk_price = arc4random()%(RED_TOWN_SILK_MAX_PRICE - RED_TOWN_SILK_MIN_PRICE + 1) + RED_TOWN_SILK_MIN_PRICE;
     loc_array[0]->ore_price = arc4random()%(RED_TOWN_ORE_MAX_PRICE - RED_TOWN_ORE_MIN_PRICE + 1) + RED_TOWN_ORE_MIN_PRICE;
     loc_array[0]->gem_price = arc4random()%(RED_TOWN_GEM_MAX_PRICE - RED_TOWN_GEM_MIN_PRICE + 1) + RED_TOWN_GEM_MIN_PRICE;
+    loc_array[0]->lumber_min_restock = RED_TOWN_LUMBER_MIN_RESTOCK;
+    loc_array[0]->stone_min_restock = RED_TOWN_STONE_MIN_RESTOCK;
+    loc_array[0]->silk_min_restock = RED_TOWN_SILK_MIN_RESTOCK;
+    loc_array[0]->ore_min_restock = RED_TOWN_ORE_MIN_RESTOCK;
+    loc_array[0]->gem_min_restock = RED_TOWN_GEM_MIN_RESTOCK;
+    
+    loc_array[0]->lumber_max_restock = RED_TOWN_LUMBER_MAX_RESTOCK;
+    loc_array[0]->stone_max_restock = RED_TOWN_STONE_MAX_RESTOCK;
+    loc_array[0]->silk_max_restock = RED_TOWN_SILK_MAX_RESTOCK;
+    loc_array[0]->ore_max_restock = RED_TOWN_ORE_MAX_RESTOCK;
+    loc_array[0]->gem_max_restock = RED_TOWN_GEM_MAX_RESTOCK;
+    
+    loc_array[0]->lumber_min_price = RED_TOWN_LUMBER_MIN_PRICE;
+    loc_array[0]->stone_min_price = RED_TOWN_STONE_MIN_PRICE;
+    loc_array[0]->silk_min_price = RED_TOWN_SILK_MIN_PRICE;
+    loc_array[0]->ore_min_price = RED_TOWN_ORE_MIN_PRICE;
+    loc_array[0]->gem_min_price = RED_TOWN_GEM_MIN_PRICE;
+    
+    loc_array[0]->lumber_max_price = RED_TOWN_LUMBER_MAX_PRICE;
+    loc_array[0]->stone_max_price = RED_TOWN_STONE_MAX_PRICE;
+    loc_array[0]->silk_max_price = RED_TOWN_SILK_MAX_PRICE;
+    loc_array[0]->ore_max_price = RED_TOWN_ORE_MAX_PRICE;
+    loc_array[0]->gem_max_price = RED_TOWN_GEM_MAX_PRICE;
     
     loc_array[1]->name = AZURE_VALLEY;
     loc_array[1]->menu_name = AZURE_VALLEY_MENU;
@@ -48,6 +71,29 @@ void initialize_locations(LOCATION *loc_array[], int number_of_locations) {
     loc_array[1]->silk_price = arc4random()%(AZURE_VALLEY_SILK_MAX_PRICE - AZURE_VALLEY_SILK_MIN_PRICE + 1) + AZURE_VALLEY_SILK_MIN_PRICE;
     loc_array[1]->ore_price = arc4random()%(AZURE_VALLEY_ORE_MAX_PRICE - AZURE_VALLEY_ORE_MIN_PRICE + 1) + AZURE_VALLEY_ORE_MIN_PRICE;
     loc_array[1]->gem_price = arc4random()%(AZURE_VALLEY_GEM_MAX_PRICE - AZURE_VALLEY_GEM_MIN_PRICE + 1) + AZURE_VALLEY_GEM_MIN_PRICE;
+    loc_array[1]->lumber_min_restock = AZURE_VALLEY_LUMBER_MIN_RESTOCK;
+    loc_array[1]->stone_min_restock = AZURE_VALLEY_STONE_MIN_RESTOCK;
+    loc_array[1]->silk_min_restock = AZURE_VALLEY_SILK_MIN_RESTOCK;
+    loc_array[1]->ore_min_restock = AZURE_VALLEY_ORE_MIN_RESTOCK;
+    loc_array[1]->gem_min_restock = AZURE_VALLEY_GEM_MIN_RESTOCK;
+    
+    loc_array[1]->lumber_max_restock = AZURE_VALLEY_LUMBER_MAX_RESTOCK;
+    loc_array[1]->stone_max_restock = AZURE_VALLEY_STONE_MAX_RESTOCK;
+    loc_array[1]->silk_max_restock = AZURE_VALLEY_SILK_MAX_RESTOCK;
+    loc_array[1]->ore_max_restock = AZURE_VALLEY_ORE_MAX_RESTOCK;
+    loc_array[1]->gem_max_restock = AZURE_VALLEY_GEM_MAX_RESTOCK;
+    
+    loc_array[1]->lumber_min_price = AZURE_VALLEY_LUMBER_MIN_PRICE;
+    loc_array[1]->stone_min_price = AZURE_VALLEY_STONE_MIN_PRICE;
+    loc_array[1]->silk_min_price = AZURE_VALLEY_SILK_MIN_PRICE;
+    loc_array[1]->ore_min_price = AZURE_VALLEY_ORE_MIN_PRICE;
+    loc_array[1]->gem_min_price = AZURE_VALLEY_GEM_MIN_PRICE;
+    
+    loc_array[1]->lumber_max_price = AZURE_VALLEY_LUMBER_MAX_PRICE;
+    loc_array[1]->stone_max_price = AZURE_VALLEY_STONE_MAX_PRICE;
+    loc_array[1]->silk_max_price = AZURE_VALLEY_SILK_MAX_PRICE;
+    loc_array[1]->ore_max_price = AZURE_VALLEY_ORE_MAX_PRICE;
+    loc_array[1]->gem_max_price = AZURE_VALLEY_GEM_MAX_PRICE;
     
     loc_array[2]->name = EMERALD_CITY;
     loc_array[2]->menu_name = EMERALD_CITY_MENU;
@@ -62,6 +108,29 @@ void initialize_locations(LOCATION *loc_array[], int number_of_locations) {
     loc_array[2]->silk_price = arc4random()%(EMERALD_CITY_SILK_MAX_PRICE - EMERALD_CITY_SILK_MIN_PRICE + 1) + EMERALD_CITY_SILK_MIN_PRICE;
     loc_array[2]->ore_price = arc4random()%(EMERALD_CITY_ORE_MAX_PRICE - EMERALD_CITY_ORE_MIN_PRICE + 1) + EMERALD_CITY_ORE_MIN_PRICE;
     loc_array[2]->gem_price = arc4random()%(EMERALD_CITY_GEM_MAX_PRICE - EMERALD_CITY_GEM_MIN_PRICE + 1) + EMERALD_CITY_GEM_MIN_PRICE;
+    loc_array[2]->lumber_min_restock = EMERALD_CITY_LUMBER_MIN_RESTOCK;
+    loc_array[2]->stone_min_restock = EMERALD_CITY_STONE_MIN_RESTOCK;
+    loc_array[2]->silk_min_restock = EMERALD_CITY_SILK_MIN_RESTOCK;
+    loc_array[2]->ore_min_restock = EMERALD_CITY_ORE_MIN_RESTOCK;
+    loc_array[2]->gem_min_restock = EMERALD_CITY_GEM_MIN_RESTOCK;
+    
+    loc_array[2]->lumber_max_restock = EMERALD_CITY_LUMBER_MAX_RESTOCK;
+    loc_array[2]->stone_max_restock = EMERALD_CITY_STONE_MAX_RESTOCK;
+    loc_array[2]->silk_max_restock = EMERALD_CITY_SILK_MAX_RESTOCK;
+    loc_array[2]->ore_max_restock = EMERALD_CITY_ORE_MAX_RESTOCK;
+    loc_array[2]->gem_max_restock = EMERALD_CITY_GEM_MAX_RESTOCK;
+    
+    loc_array[2]->lumber_min_price = EMERALD_CITY_LUMBER_MIN_PRICE;
+    loc_array[2]->stone_min_price = EMERALD_CITY_STONE_MIN_PRICE;
+    loc_array[2]->silk_min_price = EMERALD_CITY_SILK_MIN_PRICE;
+    loc_array[2]->ore_min_price = EMERALD_CITY_ORE_MIN_PRICE;
+    loc_array[2]->gem_min_price = EMERALD_CITY_GEM_MIN_PRICE;
+    
+    loc_array[2]->lumber_max_price = EMERALD_CITY_LUMBER_MAX_PRICE;
+    loc_array[2]->stone_max_price = EMERALD_CITY_STONE_MAX_PRICE;
+    loc_array[2]->silk_max_price = EMERALD_CITY_SILK_MAX_PRICE;
+    loc_array[2]->ore_max_price = EMERALD_CITY_ORE_MAX_PRICE;
+    loc_array[2]->gem_max_price = EMERALD_CITY_GEM_MAX_PRICE;
     
     loc_array[3]->name = GREY_CANYON;
     loc_array[3]->menu_name = GREY_CANYON_MENU;
@@ -76,6 +145,29 @@ void initialize_locations(LOCATION *loc_array[], int number_of_locations) {
     loc_array[3]->silk_price = arc4random()%(GREY_CANYON_SILK_MAX_PRICE - GREY_CANYON_SILK_MIN_PRICE + 1) + GREY_CANYON_SILK_MIN_PRICE;
     loc_array[3]->ore_price = arc4random()%(GREY_CANYON_ORE_MAX_PRICE - GREY_CANYON_ORE_MIN_PRICE + 1) + GREY_CANYON_ORE_MIN_PRICE;
     loc_array[3]->gem_price = arc4random()%(GREY_CANYON_GEM_MAX_PRICE - GREY_CANYON_GEM_MIN_PRICE + 1) + GREY_CANYON_GEM_MIN_PRICE;
+    loc_array[3]->lumber_min_restock = GREY_CANYON_LUMBER_MIN_RESTOCK;
+    loc_array[3]->stone_min_restock = GREY_CANYON_STONE_MIN_RESTOCK;
+    loc_array[3]->silk_min_restock = GREY_CANYON_SILK_MIN_RESTOCK;
+    loc_array[3]->ore_min_restock = GREY_CANYON_ORE_MIN_RESTOCK;
+    loc_array[3]->gem_min_restock = GREY_CANYON_GEM_MIN_RESTOCK;
+    
+    loc_array[3]->lumber_max_restock = GREY_CANYON_LUMBER_MAX_RESTOCK;
+    loc_array[3]->stone_max_restock = GREY_CANYON_STONE_MAX_RESTOCK;
+    loc_array[3]->silk_max_restock = GREY_CANYON_SILK_MAX_RESTOCK;
+    loc_array[3]->ore_max_restock = GREY_CANYON_ORE_MAX_RESTOCK;
+    loc_array[3]->gem_max_restock = GREY_CANYON_GEM_MAX_RESTOCK;
+    
+    loc_array[3]->lumber_min_price = GREY_CANYON_LUMBER_MIN_PRICE;
+    loc_array[3]->stone_min_price = GREY_CANYON_STONE_MIN_PRICE;
+    loc_array[3]->silk_min_price = GREY_CANYON_SILK_MIN_PRICE;
+    loc_array[3]->ore_min_price = GREY_CANYON_ORE_MIN_PRICE;
+    loc_array[3]->gem_min_price = GREY_CANYON_GEM_MIN_PRICE;
+    
+    loc_array[3]->lumber_max_price = GREY_CANYON_LUMBER_MAX_PRICE;
+    loc_array[3]->stone_max_price = GREY_CANYON_STONE_MAX_PRICE;
+    loc_array[3]->silk_max_price = GREY_CANYON_SILK_MAX_PRICE;
+    loc_array[3]->ore_max_price = GREY_CANYON_ORE_MAX_PRICE;
+    loc_array[3]->gem_max_price = GREY_CANYON_GEM_MAX_PRICE;
     
     loc_array[4]->name = PIRATE_COVE;
     loc_array[4]->menu_name = PIRATE_COVE_MENU;
@@ -90,4 +182,27 @@ void initialize_locations(LOCATION *loc_array[], int number_of_locations) {
     loc_array[4]->silk_price = arc4random()%(PIRATE_COVE_SILK_MAX_PRICE - PIRATE_COVE_SILK_MIN_PRICE + 1) + PIRATE_COVE_SILK_MIN_PRICE;
     loc_array[4]->ore_price = arc4random()%(PIRATE_COVE_ORE_MAX_PRICE - PIRATE_COVE_ORE_MIN_PRICE + 1) + PIRATE_COVE_ORE_MIN_PRICE;
     loc_array[4]->gem_price = arc4random()%(PIRATE_COVE_GEM_MAX_PRICE - PIRATE_COVE_GEM_MIN_PRICE + 1) + PIRATE_COVE_GEM_MIN_PRICE;
+    loc_array[4]->lumber_min_restock = PIRATE_COVE_LUMBER_MIN_RESTOCK;
+    loc_array[4]->stone_min_restock = PIRATE_COVE_STONE_MIN_RESTOCK;
+    loc_array[4]->silk_min_restock = PIRATE_COVE_SILK_MIN_RESTOCK;
+    loc_array[4]->ore_min_restock = PIRATE_COVE_ORE_MIN_RESTOCK;
+    loc_array[4]->gem_min_restock = PIRATE_COVE_GEM_MIN_RESTOCK;
+    
+    loc_array[4]->lumber_max_restock = PIRATE_COVE_LUMBER_MAX_RESTOCK;
+    loc_array[4]->stone_max_restock = PIRATE_COVE_STONE_MAX_RESTOCK;
+    loc_array[4]->silk_max_restock = PIRATE_COVE_SILK_MAX_RESTOCK;
+    loc_array[4]->ore_max_restock = PIRATE_COVE_ORE_MAX_RESTOCK;
+    loc_array[4]->gem_max_restock = PIRATE_COVE_GEM_MAX_RESTOCK;
+    
+    loc_array[4]->lumber_min_price = PIRATE_COVE_LUMBER_MIN_PRICE;
+    loc_array[4]->stone_min_price = PIRATE_COVE_STONE_MIN_PRICE;
+    loc_array[4]->silk_min_price = PIRATE_COVE_SILK_MIN_PRICE;
+    loc_array[4]->ore_min_price = PIRATE_COVE_ORE_MIN_PRICE;
+    loc_array[4]->gem_min_price = PIRATE_COVE_GEM_MIN_PRICE;
+    
+    loc_array[4]->lumber_max_price = PIRATE_COVE_LUMBER_MAX_PRICE;
+    loc_array[4]->stone_max_price = PIRATE_COVE_STONE_MAX_PRICE;
+    loc_array[4]->silk_max_price = PIRATE_COVE_SILK_MAX_PRICE;
+    loc_array[4]->ore_max_price = PIRATE_COVE_ORE_MAX_PRICE;
+    loc_array[4]->gem_max_price = PIRATE_COVE_GEM_MAX_PRICE;
 }
