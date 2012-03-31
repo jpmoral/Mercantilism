@@ -26,6 +26,12 @@
 #define GREY_CANYON "Grey Canyon"
 #define PIRATE_COVE "Pirate Cove"
 
+#define RED_TOWN_MENU "[R]ed Town"
+#define AZURE_VALLEY_MENU "[A]zure Valley"
+#define EMERALD_CITY_MENU "[E]merald City"
+#define GREY_CANYON_MENU "[G]rey Canyon"
+#define PIRATE_COVE_MENU "[P]irate Cove"
+
 #define RED_TOWN_LUMBER_MIN_PRICE 10
 #define RED_TOWN_LUMBER_MAX_PRICE 40
 #define RED_TOWN_STONE_MIN_PRICE 150
@@ -136,4 +142,6 @@
 #define PIRATE_COVE_GEM_MIN_RESTOCK 5
 #define PIRATE_COVE_GEM_MAX_RESTOCK 10
 
+#define VALID_MAIN_MENU_CHOICES "PHQ"
+#define VALID_LOCATION_CHOICES "BRAEGPQ"
 #endif
