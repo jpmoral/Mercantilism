@@ -37,5 +37,6 @@ void display_main_menu(void) {
     printf("\t\t\t     MERCHANTILISM\n\n\n");
     printf("\t\t\t [P]lay the game\n\n");
     printf("\t\t\t [H]ow to play\n\n");
-    printf("\t\t\t [E]xit\n");
+    printf("\t\t\t [Q]uit\n");
 }
+
