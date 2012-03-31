@@ -130,12 +130,10 @@ END_TURN enter_bank(PLAYER *player) {
     
     display_player_profile(player);
     display_bank_actions_menu();
-    consume_newline();
     char choice = '\0';
     char *valid_choices = VALID_BANK_ACTIONS;
     
     while (!strpbrk(valid_choices, &choice)) {
-        printf("not valid");
         choice = getchar();
         choice = toupper(choice);
     }
