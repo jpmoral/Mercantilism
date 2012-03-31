@@ -213,3 +213,26 @@ void initialize_locations(LOCATION *loc_array[], int number_of_locations) {
     loc_array[4]->ore_max_price = PIRATE_COVE_ORE_MAX_PRICE;
     loc_array[4]->gem_max_price = PIRATE_COVE_GEM_MAX_PRICE;
 }
+
+void updateGameData(PLAYER *player, LOCATION *loc_array[]) {
+    
+    srand((unsigned)time(NULL));
+    int i;
+    for (i = 0; i < 1; i++) {
+        
+        loc_array[i]->lumber_available = loc_array[i]->lumber_available + rand()%(loc_array[i]->lumber_max_restock - loc_array[i]->lumber_min_restock) + loc_array[i]->lumber_min_restock;
+        loc_array[i]->stone_available = loc_array[i]->stone_available + rand()%(loc_array[i]->stone_max_restock - loc_array[i]->stone_min_restock) + loc_array[i]->stone_min_restock;
+        loc_array[i]->silk_available = loc_array[i]->silk_available + rand()%(loc_array[i]->silk_max_restock - loc_array[i]->silk_min_restock) + loc_array[i]->silk_min_restock;
+        loc_array[i]->ore_available = loc_array[i]->ore_available + rand()%(loc_array[i]->ore_max_restock - loc_array[i]->ore_min_restock) + loc_array[i]->ore_min_restock;
+        loc_array[i]->gem_available = loc_array[i]->gem_available + rand()%(loc_array[i]->gem_max_restock - loc_array[i]->gem_min_restock) + loc_array[i]->gem_min_restock;
+        
+        loc_array[i]->lumber_price = rand()%(loc_array[i]->lumber_max_price - loc_array[i]->lumber_min_price) + loc_array[i]->lumber_min_price;
+        loc_array[i]->stone_price = rand()%(loc_array[i]->stone_max_price - loc_array[i]->stone_min_price) + loc_array[i]->stone_min_price;
+        loc_array[i]->silk_price = rand()%(loc_array[i]->silk_max_price - loc_array[i]->silk_min_price) + loc_array[i]->silk_min_price;
+        loc_array[i]->ore_price = rand()%(loc_array[i]->ore_max_price - loc_array[i]->ore_min_price) + loc_array[i]->ore_min_price;
+        loc_array[i]->gem_price = rand()%(loc_array[i]->gem_max_price - loc_array[i]->gem_min_price) + loc_array[i]->gem_min_price;
+    }
+    
+    
+}
+
