@@ -13,22 +13,10 @@
 #include "Constants.h"
 #include "player_and_locations.h"
 #include "display.h"
-
-typedef enum {
-    NO,
-    YES
-} END_TURN;
-
-typedef enum {
-    ONGOING,
-    WIN,
-    LOSS
-} GAME_STATE;
+#include "actions_state.h"
 
 void game(void);
 void help(void);
-END_TURN enter_bank(PLAYER *);
-END_TURN enter_location(PLAYER *, LOCATION *);
 void consume_newline(void);
 
 int main (int argc, const char * argv[]) {
@@ -124,41 +112,6 @@ void help(void) {
     consume_newline();
     char c;
     c = getchar();
-}
-
-END_TURN enter_bank(PLAYER *player) {
-    
-    display_player_profile(player);
-    display_bank_actions_menu();
-    char choice = '\0';
-    char *valid_choices = VALID_BANK_ACTIONS;
-    
-    while (!strpbrk(valid_choices, &choice)) {
-        choice = getchar();
-        choice = toupper(choice);
-    }
-    
-    switch (choice) {
-        case 'L':
-            
-            return YES;
-            break;
-        case 'P':
-            
-            return YES;
-            break;
-        case 'M':
-            
-            return NO;
-            break;
-    }
-    
-    return NO;
-}
-
-END_TURN enter_location(PLAYER *player, LOCATION *location) {
-    
-    return YES;
 }
 
 void consume_newline(void) {

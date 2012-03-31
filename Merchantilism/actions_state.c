@@ -7,3 +7,72 @@
 //
 
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <time.h>
+#include "actions_state.h"
+#include "display.h"
+#include "player_and_locations.h"
+#include "Constants.h"
+
+END_TURN enter_bank(PLAYER *player) {
+    
+    END_TURN end_turn = YES;
+    display_player_profile(player);
+    display_bank_actions_menu();
+    char choice = '\0';
+    char *valid_choices = VALID_BANK_ACTIONS;
+    
+    while (!strpbrk(valid_choices, &choice)) {
+        choice = getchar();
+        choice = toupper(choice);
+    }
+    
+    switch (choice) {
+        case 'L':
+            end_turn = take_out_loan(player);
+            return end_turn;
+            break;
+        case 'P':
+            end_turn = pay_bank(player);
+            return end_turn;
+            break;
+        case 'M':
+            
+            return NO;
+            break;
+    }
+    
+    return NO;
+}
+
+END_TURN enter_location(PLAYER *player, LOCATION *location) {
+    
+    return YES;
+}
+
+END_TURN take_out_loan(PLAYER *player) {
+    
+    return YES;
+}
+
+END_TURN pay_bank(PLAYER *player) {
+    
+    return YES;
+}
+
+END_TURN invest(PLAYER *player) {
+    
+    return YES;
+}
+
+END_TURN buy_goods(PLAYER *player, LOCATION *loc) {
+    
+    return YES;
+}
+
+END_TURN sell_goods(PLAYER *player, LOCATION *loc) {
+    
+    return YES;
+}
