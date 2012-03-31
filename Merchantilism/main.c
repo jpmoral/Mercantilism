@@ -17,6 +17,7 @@
 void game(void);
 void enter_bank(PLAYER *);
 void enter_location(PLAYER *, LOCATION *);
+void consume_newline(void);
 
 int main (int argc, const char * argv[]) {
     
@@ -100,4 +101,11 @@ void enter_bank(PLAYER *player) {
 
 void enter_location(PLAYER *player, LOCATION *location) {
     
+}
+
+void consume_newline(void) {
+    
+    while (getchar() != '\n') {
+        
+    }
 }
