@@ -158,6 +158,7 @@ END_TURN enter_bank(PLAYER *player) {
 
 END_TURN enter_location(PLAYER *player, LOCATION *location) {
     
+    return YES;
 }
 
 void consume_newline(void) {
