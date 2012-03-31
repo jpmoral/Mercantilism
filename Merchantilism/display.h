@@ -13,5 +13,8 @@
 
 void display_player_profile(PLAYER *);
 void display_main_menu(void);
+void display_destination_choice_menu(LOCATION *[], int);
+void display_bank_actions_menu(void);
+void display_location_actions_menu(LOCATION *);
 
 #endif

@@ -40,3 +40,23 @@ void display_main_menu(void) {
     printf("\t\t\t [Q]uit\n");
 }
 
+void display_destination_choice_menu(LOCATION *loc_array[],int number_of_locations) {
+    
+    printf("\n\n");
+    printf("[B}ank\n");
+    int i;
+    for (i = 0; i < number_of_locations; i++) {
+        printf("%s\n",loc_array[i]->menu_name);
+    }
+    printf("[Q]uit\n");
+    printf("\n\nWhere do you want to go?: ");
+}
+
+void display_bank_actions_menu(void) {
+    
+}
+
+void display_location_actions_menu(LOCATION *location) {
+    
+}
+
