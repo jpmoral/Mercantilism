@@ -52,4 +52,38 @@ void game (void) {
     initialize_player(player);
     initialize_locations(loc_array, NUMBER_OF_LOCATIONS);
     display_player_profile(player);
+    display_destination_choice_menu(loc_array, NUMBER_OF_LOCATIONS);
+    
+    char choice = '\0';
+    char *valid_choices = VALID_LOCATION_CHOICES;
+    
+    while (!strpbrk(valid_choices, &choice)) {
+        choice = getchar();
+        choice = toupper(choice);
+    }
+    
+    switch(choice){
+        case 'B':
+            
+            break;
+        case 'R':
+            
+            break;
+        case 'A':
+            
+            break;
+        case 'E':
+            
+            break;
+        case 'G':
+            
+            break;
+        case 'P':
+            
+            break;
+        case 'Q':
+            printf("Goodbye!\n");
+            return;
+            break;
+    }
 }
