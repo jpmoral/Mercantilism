@@ -111,6 +111,10 @@ void game (void) {
                 return;
                 break;
         }
+        
+        if (end_turn == YES) {
+            // update game data
+        }
     }
 }
 
