@@ -76,7 +76,7 @@ void game (void) {
     END_TURN end_turn;
     GAME_STATE game_state = ONGOING;
     
-    while (choice != 'Q') {
+    while (choice != 'Q' && game_state == ONGOING) {
         
         choice = '\0';
         display_player_profile(player);
