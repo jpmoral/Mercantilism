@@ -52,8 +52,8 @@ int main (int argc, const char * argv[]) {
 
 void game (void) {
     
-    PLAYER *player = (PLAYER *)malloc(sizeof(PLAYER));
-    LOCATION *red = (LOCATION *)malloc(sizeof(PLAYER)), *azure = (LOCATION *)malloc(sizeof(PLAYER)), *emerald = (LOCATION *)malloc(sizeof(PLAYER)), *grey = (LOCATION *)malloc(sizeof(PLAYER)), *pirate = (LOCATION *)malloc(sizeof(PLAYER));
+    PLAYER *player = (PLAYER *)malloc(sizeof(*player));
+    LOCATION *red = (LOCATION *)malloc(sizeof(*red)), *azure = (LOCATION *)malloc(sizeof(*azure)), *emerald = (LOCATION *)malloc(sizeof(*emerald)), *grey = (LOCATION *)malloc(sizeof(*grey)), *pirate = (LOCATION *)malloc(sizeof(*pirate));
     LOCATION *loc_array[] = {red, azure, emerald, grey, pirate};
     
     initialize_player(player);
