@@ -35,7 +35,7 @@ int main (int argc, const char * argv[]) {
         case 'H':
             printf("help");
             break;
-        case 'E':
+        case 'Q':
             printf("Goodbye!\n");
         break;}
     
