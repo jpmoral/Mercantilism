@@ -15,7 +15,7 @@ typedef struct {
 } PLAYER;
 
 typedef struct {
-    char *name;
+    char *name, *menu_name;
     int lumber_available, stone_available, silk_available, ore_available, gem_available;
     int lumber_price, stone_price, silk_price, ore_price, gem_price;
 } LOCATION;

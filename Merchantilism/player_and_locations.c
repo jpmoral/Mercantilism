@@ -22,6 +22,7 @@ void initialize_player(PLAYER *player) {
 void initialize_locations(LOCATION *loc_array[], int number_of_locations) {
     
     loc_array[0]->name = RED_TOWN;
+    loc_array[0]->menu_name = RED_TOWN_MENU;
     loc_array[0]->lumber_available = arc4random()%(RED_TOWN_LUMBER_MAX_RESTOCK - RED_TOWN_LUMBER_MIN_RESTOCK + 1) + RED_TOWN_LUMBER_MIN_RESTOCK;
     loc_array[0]->stone_available = arc4random()%(RED_TOWN_STONE_MAX_RESTOCK - RED_TOWN_STONE_MIN_RESTOCK + 1) + RED_TOWN_STONE_MIN_RESTOCK;
     loc_array[0]->silk_available = arc4random()%(RED_TOWN_SILK_MAX_RESTOCK - RED_TOWN_SILK_MIN_RESTOCK + 1) + RED_TOWN_SILK_MIN_RESTOCK;
@@ -35,6 +36,7 @@ void initialize_locations(LOCATION *loc_array[], int number_of_locations) {
     loc_array[0]->gem_price = arc4random()%(RED_TOWN_GEM_MAX_PRICE - RED_TOWN_GEM_MIN_PRICE + 1) + RED_TOWN_GEM_MIN_PRICE;
     
     loc_array[1]->name = AZURE_VALLEY;
+    loc_array[1]->menu_name = AZURE_VALLEY_MENU;
     loc_array[1]->lumber_available = arc4random()%(AZURE_VALLEY_LUMBER_MAX_RESTOCK - AZURE_VALLEY_LUMBER_MIN_RESTOCK + 1) + AZURE_VALLEY_LUMBER_MIN_RESTOCK;
     loc_array[1]->stone_available = arc4random()%(AZURE_VALLEY_STONE_MAX_RESTOCK - AZURE_VALLEY_STONE_MIN_RESTOCK + 1) + AZURE_VALLEY_STONE_MIN_RESTOCK;
     loc_array[1]->silk_available = arc4random()%(AZURE_VALLEY_SILK_MAX_RESTOCK - AZURE_VALLEY_SILK_MIN_RESTOCK + 1) + AZURE_VALLEY_SILK_MIN_RESTOCK;
@@ -48,6 +50,7 @@ void initialize_locations(LOCATION *loc_array[], int number_of_locations) {
     loc_array[1]->gem_price = arc4random()%(AZURE_VALLEY_GEM_MAX_PRICE - AZURE_VALLEY_GEM_MIN_PRICE + 1) + AZURE_VALLEY_GEM_MIN_PRICE;
     
     loc_array[2]->name = EMERALD_CITY;
+    loc_array[2]->menu_name = EMERALD_CITY_MENU;
     loc_array[2]->lumber_available = arc4random()%(EMERALD_CITY_LUMBER_MAX_RESTOCK - EMERALD_CITY_LUMBER_MIN_RESTOCK + 1) + EMERALD_CITY_LUMBER_MIN_RESTOCK;
     loc_array[2]->stone_available = arc4random()%(EMERALD_CITY_STONE_MAX_RESTOCK - EMERALD_CITY_STONE_MIN_RESTOCK + 1) + EMERALD_CITY_STONE_MIN_RESTOCK;
     loc_array[2]->silk_available = arc4random()%(EMERALD_CITY_SILK_MAX_RESTOCK - EMERALD_CITY_SILK_MIN_RESTOCK + 1) + EMERALD_CITY_SILK_MIN_RESTOCK;
@@ -61,6 +64,7 @@ void initialize_locations(LOCATION *loc_array[], int number_of_locations) {
     loc_array[2]->gem_price = arc4random()%(EMERALD_CITY_GEM_MAX_PRICE - EMERALD_CITY_GEM_MIN_PRICE + 1) + EMERALD_CITY_GEM_MIN_PRICE;
     
     loc_array[3]->name = GREY_CANYON;
+    loc_array[3]->menu_name = GREY_CANYON_MENU;
     loc_array[3]->lumber_available = arc4random()%(GREY_CANYON_LUMBER_MAX_RESTOCK - GREY_CANYON_LUMBER_MIN_RESTOCK + 1) + GREY_CANYON_LUMBER_MIN_RESTOCK;
     loc_array[3]->stone_available = arc4random()%(GREY_CANYON_STONE_MAX_RESTOCK - GREY_CANYON_STONE_MIN_RESTOCK + 1) + GREY_CANYON_STONE_MIN_RESTOCK;
     loc_array[3]->silk_available = arc4random()%(GREY_CANYON_SILK_MAX_RESTOCK - GREY_CANYON_SILK_MIN_RESTOCK + 1) + GREY_CANYON_SILK_MIN_RESTOCK;
@@ -74,6 +78,7 @@ void initialize_locations(LOCATION *loc_array[], int number_of_locations) {
     loc_array[3]->gem_price = arc4random()%(GREY_CANYON_GEM_MAX_PRICE - GREY_CANYON_GEM_MIN_PRICE + 1) + GREY_CANYON_GEM_MIN_PRICE;
     
     loc_array[4]->name = PIRATE_COVE;
+    loc_array[4]->menu_name = PIRATE_COVE_MENU;
     loc_array[4]->lumber_available = arc4random()%(PIRATE_COVE_LUMBER_MAX_RESTOCK - PIRATE_COVE_LUMBER_MIN_RESTOCK + 1) + PIRATE_COVE_LUMBER_MIN_RESTOCK;
     loc_array[4]->stone_available = arc4random()%(PIRATE_COVE_STONE_MAX_RESTOCK - PIRATE_COVE_STONE_MIN_RESTOCK + 1) + PIRATE_COVE_STONE_MIN_RESTOCK;
     loc_array[4]->silk_available = arc4random()%(PIRATE_COVE_SILK_MAX_RESTOCK - PIRATE_COVE_SILK_MIN_RESTOCK + 1) + PIRATE_COVE_SILK_MIN_RESTOCK;
