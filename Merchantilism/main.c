@@ -10,9 +10,9 @@
 #include <stdlib.h>
 #include "Constants.h"
 #include "player_and_locations.h"
+#include "display.h"
 
 void main_menu();
-void display_player_profile(PLAYER *);
 
 int main (int argc, const char * argv[]) {
     

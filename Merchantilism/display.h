@@ -9,6 +9,9 @@
 #ifndef Mercantilism_display_h
 #define Mercantilism_display_h
 
+#include "player_and_locations.h"
+
+void display_player_profile(PLAYER *);
 
 
 #endif
