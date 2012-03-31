@@ -23,23 +23,27 @@ int main (int argc, const char * argv[]) {
     char choice = '\0';
     char *valid_choices = VALID_MAIN_MENU_CHOICES;
     
-    display_main_menu();
-    
-    while (!strpbrk(valid_choices, &choice)) {
-        choice = getchar();
-        choice = toupper(choice);
-    }
-    
-    switch(choice){
-        case 'P':
-            game();
-            break;
-        case 'H':
-            printf("help");
-            break;
-        case 'Q':
-            printf("Goodbye!\n");
-        break;
+    while (choice != 'Q') {
+        
+        choice = '\0';
+        display_main_menu();
+        
+        while (!strpbrk(valid_choices, &choice)) {
+            choice = getchar();
+            choice = toupper(choice);
+        }
+        
+        switch(choice){
+            case 'P':
+                game();
+                break;
+            case 'H':
+                help();
+                break;
+            case 'Q':
+                printf("Goodbye!\n");
+                break;
+        }
     }
     
     return 0;
