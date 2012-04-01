@@ -13,11 +13,10 @@
 #include "Constants.h"
 #include "player_and_locations.h"
 #include "display.h"
+#include "actions_state.h"
 
 void game(void);
 void help(void);
-void enter_bank(PLAYER *);
-void enter_location(PLAYER *, LOCATION *);
 void consume_newline(void);
 
 int main (int argc, const char * argv[]) {
@@ -53,17 +52,19 @@ int main (int argc, const char * argv[]) {
 
 void game (void) {
     
-    PLAYER *player = (PLAYER *)malloc(sizeof(PLAYER));
-    LOCATION *red = (LOCATION *)malloc(sizeof(PLAYER)), *azure = (LOCATION *)malloc(sizeof(PLAYER)), *emerald = (LOCATION *)malloc(sizeof(PLAYER)), *grey = (LOCATION *)malloc(sizeof(PLAYER)), *pirate = (LOCATION *)malloc(sizeof(PLAYER));
+    PLAYER *player = (PLAYER *)malloc(sizeof(*player));
+    LOCATION *red = (LOCATION *)malloc(sizeof(*red)), *azure = (LOCATION *)malloc(sizeof(*azure)), *emerald = (LOCATION *)malloc(sizeof(*emerald)), *grey = (LOCATION *)malloc(sizeof(*grey)), *pirate = (LOCATION *)malloc(sizeof(*pirate));
     LOCATION *loc_array[] = {red, azure, emerald, grey, pirate};
-    
+        
     initialize_player(player);
     initialize_locations(loc_array, NUMBER_OF_LOCATIONS);
     
     char choice = '\0';
     char *valid_choices = VALID_LOCATION_CHOICES;
+    END_TURN end_turn;
+    GAME_STATE game_state = ONGOING;
     
-    while (choice != 'Q') {
+    while (choice != 'Q' && game_state == ONGOING) {
         
         choice = '\0';
         display_player_profile(player);
@@ -76,29 +77,40 @@ void game (void) {
         
         switch(choice){
             case 'B':
-                enter_bank(player);
+                end_turn = enter_bank(player);
                 break;
             case 'R':
-                
+                end_turn = enter_location(player, loc_array[0]);
                 break;
             case 'A':
-                
+                end_turn = enter_location(player, loc_array[1]);
                 break;
             case 'E':
-                
+                end_turn = enter_location(player, loc_array[2]);
                 break;
             case 'G':
-                
+                end_turn = enter_location(player, loc_array[3]);
                 break;
             case 'P':
-                
+                end_turn = enter_location(player, loc_array[4]);
                 break;
             case 'Q':
                 printf("Goodbye!\n");
                 return;
                 break;
         }
+        
+        if (end_turn == YES) {
+            updateGameData(player, loc_array);
+            game_state = get_game_state(player);
+        }
     }
+    
+    display_player_profile(player);
+    display_endgame_message(game_state);
+    consume_newline();
+    char c;
+    c = getchar();
 }
 
 void help(void) {
@@ -107,26 +119,6 @@ void help(void) {
     consume_newline();
     char c;
     c = getchar();
-}
-
-void enter_bank(PLAYER *player) {
-    
-    display_player_profile(player);
-    display_bank_actions_menu();
-    consume_newline();
-    char choice = '\0';
-    char *valid_choices = VALID_BANK_ACTIONS;
-    
-    while (!strpbrk(valid_choices, &choice)) {
-        printf("not valid");
-        choice = getchar();
-        choice = toupper(choice);
-    }
-    
-}
-
-void enter_location(PLAYER *player, LOCATION *location) {
-    
 }
 
 void consume_newline(void) {

@@ -44,14 +44,16 @@ void display_help(void) {
     
     system("clear");
     printf("Instructions on how to play the game:\n");
-    printf("Try to beat the game HEHE\n");
+    printf("Use the keyboard to type menu choices. Press ENTER to confirm your choice.\n");
+    printf("Win the game by increasing your net balance to %.0f or greater.\n",WINNING_BALANCE);
+    printf("If your net balance falls below %.0f, you lose.\n",LOSING_BALANCE);
     printf("Press ENTER to continue.");
 }
 
 void display_destination_choice_menu(LOCATION *loc_array[],int number_of_locations) {
     
     printf("\n");
-    printf("[B}ank\n");
+    printf("[B]ank\n");
     int i;
     for (i = 0; i < number_of_locations; i++) {
         printf("%s\n",loc_array[i]->menu_name);
@@ -74,3 +76,17 @@ void display_location_actions_menu(LOCATION *location) {
     
 }
 
+void display_endgame_message(GAME_STATE game_state) {
+    
+    switch (game_state) {
+        case WIN:
+            printf("Congratulations!  You won!");
+            break;
+        case LOSS:
+            printf("Sorry, you lost.");
+            break;
+        default:
+            break;
+    }
+    printf("\nPress ENTER to continue");
+}

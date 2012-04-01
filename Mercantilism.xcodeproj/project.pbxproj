@@ -11,6 +11,7 @@
 		0C0FAD1D15246C0300A55B31 /* Merchantilism.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0C0FAD1C15246C0300A55B31 /* Merchantilism.1 */; };
 		0C0FAD2315269AEA00A55B31 /* player_and_locations.c in Sources */ = {isa = PBXBuildFile; fileRef = 0C0FAD2215269AEA00A55B31 /* player_and_locations.c */; };
 		0C0FAD271526A4AF00A55B31 /* display.c in Sources */ = {isa = PBXBuildFile; fileRef = 0C0FAD261526A4AF00A55B31 /* display.c */; };
+		0C0FAD2A152728B000A55B31 /* actions_state.c in Sources */ = {isa = PBXBuildFile; fileRef = 0C0FAD29152728B000A55B31 /* actions_state.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,8 @@
 		0C0FAD2415269D3000A55B31 /* player_and_locations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player_and_locations.h; sourceTree = "<group>"; };
 		0C0FAD251526A4A500A55B31 /* display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = display.h; sourceTree = "<group>"; };
 		0C0FAD261526A4AF00A55B31 /* display.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = display.c; sourceTree = "<group>"; };
+		0C0FAD28152728A600A55B31 /* actions_state.h */ = {isa = PBXFileReference; fileEncoding = 4; path = actions_state.h; sourceTree = "<group>"; };
+		0C0FAD29152728B000A55B31 /* actions_state.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = actions_state.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 				0C0FAD1C15246C0300A55B31 /* Merchantilism.1 */,
 				0C0FAD2215269AEA00A55B31 /* player_and_locations.c */,
 				0C0FAD2415269D3000A55B31 /* player_and_locations.h */,
+				0C0FAD28152728A600A55B31 /* actions_state.h */,
+				0C0FAD29152728B000A55B31 /* actions_state.c */,
 			);
 			path = Merchantilism;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				0C0FAD1B15246C0300A55B31 /* main.c in Sources */,
 				0C0FAD2315269AEA00A55B31 /* player_and_locations.c in Sources */,
 				0C0FAD271526A4AF00A55B31 /* display.c in Sources */,
+				0C0FAD2A152728B000A55B31 /* actions_state.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
