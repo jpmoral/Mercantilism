@@ -25,11 +25,14 @@ typedef enum {
 END_TURN enter_bank(PLAYER *);
 END_TURN enter_location(PLAYER *, LOCATION *);
 END_TURN take_out_loan(PLAYER *);
+END_TURN withdraw_investment(PLAYER *);
 END_TURN pay_bank(PLAYER *);
 END_TURN invest(PLAYER *);
 END_TURN buy_goods(PLAYER *, LOCATION *);
 END_TURN sell_goods(PLAYER *, LOCATION *);
 GAME_STATE get_game_state(PLAYER *);
+VALID_AMOUNT checkInvestment(float, float);
+VALID_AMOUNT checkPayment(float, float, float);
 void consume_newline(void);
 
 #endif

@@ -70,6 +70,8 @@ END_TURN pay_bank(PLAYER *player) {
 
 END_TURN invest(PLAYER *player) {
     
+END_TURN withdraw_investment(PLAYER *player) {
+
     return YES;
 }
 
@@ -96,6 +98,25 @@ GAME_STATE get_game_state(PLAYER *player) {
     
     return ONGOING;
 }
+
+VALID_AMOUNT checkInvestment(float amountToInvest, float cashOnHand){
+    
+    if (amountToInvest <= cashOnHand) {
+        return YES;
+    } else { 
+        return NO;
+    }
+}
+
+VALID_AMOUNT checkPayment(float amountToPay, float cashOnHand, float debt){
+    
+    if (amountToPay <= cashOnHand && amountToPay <= debt) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 void consume_newline(void) {
     
     while (getchar() != '\n') {
