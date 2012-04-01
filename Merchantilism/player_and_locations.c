@@ -17,7 +17,7 @@ void initialize_player(PLAYER *player) {
     player->cash = PLAYER_STARTING_MONEY;
     player->debt = PLAYER_STARTING_DEBT;
     player->investment = 0;
-    player->net_balance = 0;
+    updatePlayerNetBalance(player);
 }
 
 void initialize_locations(LOCATION *loc_array[], int number_of_locations) {
@@ -233,6 +233,16 @@ void updateGameData(PLAYER *player, LOCATION *loc_array[]) {
         loc_array[i]->gem_price = rand()%(loc_array[i]->gem_max_price - loc_array[i]->gem_min_price) + loc_array[i]->gem_min_price;
     }
     
-    
+    player->investment = player->investment + player->investment*INVESTMENT_INTEREST_RATE;
+    player->debt = player->debt + player->debt*DEBT_INTEREST_RATE;
+    updatePlayerNetBalance(player);
 }
 
+void updatePlayerNetBalance(PLAYER *player) {
+    
+    float cash = player->cash;
+    float inv = player->investment;
+    float debt = player->debt;
+    
+    player->net_balance = (cash - debt - (debt / 3.0) + inv);
+}
