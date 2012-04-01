@@ -14,7 +14,7 @@
 typedef enum {
     NO,
     YES
-} END_TURN;
+} END_TURN, VALID_AMOUNT;
 
 typedef enum {
     ONGOING,
@@ -25,10 +25,15 @@ typedef enum {
 END_TURN enter_bank(PLAYER *);
 END_TURN enter_location(PLAYER *, LOCATION *);
 END_TURN take_out_loan(PLAYER *);
+END_TURN withdraw_investment(PLAYER *);
 END_TURN pay_bank(PLAYER *);
 END_TURN invest(PLAYER *);
 END_TURN buy_goods(PLAYER *, LOCATION *);
 END_TURN sell_goods(PLAYER *, LOCATION *);
 GAME_STATE get_game_state(PLAYER *);
+VALID_AMOUNT is_investment_amount_valid(float, float);
+VALID_AMOUNT is_loan_payment_amount_valid(float, float, float);
+VALID_AMOUNT is_withdrawal_amount_valid(float, float);
+void consume_newline(void);
 
 #endif

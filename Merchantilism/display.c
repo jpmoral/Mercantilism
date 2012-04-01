@@ -14,7 +14,7 @@
 
 void display_player_profile(PLAYER *player) {
     
-    system("clear");
+    system(SYSTEM_CLEAR);
     printf("PROFILE:\n");
     printf("========================\n");
     printf("CASH: %.2f\n", player->cash);
@@ -32,7 +32,7 @@ void display_player_profile(PLAYER *player) {
 
 void display_main_menu(void) {
     
-    system("clear");
+    system(SYSTEM_CLEAR);
     printf("\n\n\n\n");
     printf("\t\t\t     MERCHANTILISM\n\n\n");
     printf("\t\t\t [P]lay the game\n\n");
@@ -42,7 +42,7 @@ void display_main_menu(void) {
 
 void display_help(void) {
     
-    system("clear");
+    system(SYSTEM_CLEAR);
     printf("Instructions on how to play the game:\n");
     printf("Use the keyboard to type menu choices. Press ENTER to confirm your choice.\n");
     printf("Win the game by increasing your net balance to %.0f or greater.\n",WINNING_BALANCE);
@@ -66,9 +66,11 @@ void display_bank_actions_menu(void) {
     
     printf("\n");
     printf("You are at the Bank\n\n"); 
-    printf("[L]OAN\n");
-    printf("[P]AY DEBT\n");
-    printf("[M]AIN MENU\n\n");
+    printf("[L]oan\n");
+    printf("[P]ay Debt\n");
+    printf("[I]nvest\n");
+    printf("[W]ithdraw Investment\n");
+    printf("[M]ain Menu\n\n");
     printf("What would you like to do?: ");
 }
 

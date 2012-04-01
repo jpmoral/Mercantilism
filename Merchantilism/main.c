@@ -17,7 +17,7 @@
 
 void game(void);
 void help(void);
-void consume_newline(void);
+
 
 int main (int argc, const char * argv[]) {
     
@@ -119,11 +119,4 @@ void help(void) {
     consume_newline();
     char c;
     c = getchar();
-}
-
-void consume_newline(void) {
-    
-    while (getchar() != '\n') {
-        
-    }
 }
