@@ -83,7 +83,7 @@ END_TURN pay_bank(PLAYER *player) {
     printf ("Amount to repay: ");
     scanf ("%f", &amountToPay);
     
-    VALID_AMOUNT canPay = checkPayment(amountToPay, cash, debt);
+    VALID_AMOUNT canPay = is_loan_payment_amount_valid(amountToPay, cash, debt);
     switch(canPay){
         case NO:
             system(SYSTEM_CLEAR);
@@ -111,7 +111,7 @@ END_TURN invest(PLAYER *player) {
     printf("Amount to invest:\n");
     scanf("%f", &amountToInvest);
     
-    VALID_AMOUNT canInvest = checkInvestment(amountToInvest, cash);
+    VALID_AMOUNT canInvest = is_investment_amount_valid(amountToInvest, cash);
     switch(canInvest){
         case NO: 
             system(SYSTEM_CLEAR);
@@ -160,7 +160,7 @@ GAME_STATE get_game_state(PLAYER *player) {
     return ONGOING;
 }
 
-VALID_AMOUNT checkInvestment(float amountToInvest, float cashOnHand){
+VALID_AMOUNT is_investment_amount_valid(float amountToInvest, float cashOnHand){
     
     if (amountToInvest <= cashOnHand) {
         return YES;
@@ -169,7 +169,7 @@ VALID_AMOUNT checkInvestment(float amountToInvest, float cashOnHand){
     }
 }
 
-VALID_AMOUNT checkPayment(float amountToPay, float cashOnHand, float debt){
+VALID_AMOUNT is_loan_payment_amount_valid(float amountToPay, float cashOnHand, float debt){
     
     if (amountToPay <= cashOnHand && amountToPay <= debt) {
         return YES;
