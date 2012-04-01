@@ -108,7 +108,7 @@ END_TURN invest(PLAYER *player) {
     float cash = player->cash;
     float amountToInvest;
     
-    printf("Amount to invest:\n");
+    printf("Amount to invest: ");
     scanf("%f", &amountToInvest);
     
     VALID_AMOUNT canInvest = is_investment_amount_valid(amountToInvest, cash);
