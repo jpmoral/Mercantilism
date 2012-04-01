@@ -178,6 +178,15 @@ VALID_AMOUNT is_loan_payment_amount_valid(float amountToPay, float cashOnHand, f
     }
 }
 
+VALID_AMOUNT is_withdrawal_amount_valid(float amountToWithdraw, float investment) {
+    
+    if (amountToWithdraw <= investment) {
+        return YES;
+    } else { 
+        return NO;
+    }
+}
+
 void consume_newline(void) {
     
     while (getchar() != '\n') {

@@ -33,6 +33,7 @@ END_TURN sell_goods(PLAYER *, LOCATION *);
 GAME_STATE get_game_state(PLAYER *);
 VALID_AMOUNT is_investment_amount_valid(float, float);
 VALID_AMOUNT is_loan_payment_amount_valid(float, float, float);
+VALID_AMOUNT is_withdrawal_amount_valid(float, float);
 void consume_newline(void);
 
 #endif
