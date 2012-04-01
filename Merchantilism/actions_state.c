@@ -38,6 +38,9 @@ END_TURN enter_bank(PLAYER *player) {
             end_turn = pay_bank(player);
             return end_turn;
             break;
+        case 'I':
+            end_turn = invest(player);
+            return end_turn;
         case 'M':
             
             return NO;
