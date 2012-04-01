@@ -66,9 +66,11 @@ void display_bank_actions_menu(void) {
     
     printf("\n");
     printf("You are at the Bank\n\n"); 
-    printf("[L]OAN\n");
-    printf("[P]AY DEBT\n");
-    printf("[M]AIN MENU\n\n");
+    printf("[L]oan\n");
+    printf("[P]ay Debt\n");
+    printf("[I]nvest\n");
+    printf("[W]ithdraw Investment\n");
+    printf("[M]ain Menu\n\n");
     printf("What would you like to do?: ");
 }
 
