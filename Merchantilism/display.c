@@ -76,3 +76,17 @@ void display_location_actions_menu(LOCATION *location) {
     
 }
 
+void display_endgame_message(GAME_STATE game_state) {
+    
+    switch (game_state) {
+        case WIN:
+            printf("Congratulations!  You won!");
+            break;
+        case LOSS:
+            printf("Sorry, you lost.");
+            break;
+        default:
+            break;
+    }
+    printf("\nPress ENTER to continue");
+}
