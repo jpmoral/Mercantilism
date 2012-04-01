@@ -44,7 +44,9 @@ void display_help(void) {
     
     system("clear");
     printf("Instructions on how to play the game:\n");
-    printf("Try to beat the game HEHE\n");
+    printf("Use the keyboard to type menu choices. Press ENTER to confirm your choice.\n");
+    printf("Win the game by increasing your net balance to %.0f or greater.\n",WINNING_BALANCE);
+    printf("If your net balance falls below %.0f, you lose.\n",LOSING_BALANCE);
     printf("Press ENTER to continue.");
 }
 
