@@ -30,5 +30,6 @@ END_TURN invest(PLAYER *);
 END_TURN buy_goods(PLAYER *, LOCATION *);
 END_TURN sell_goods(PLAYER *, LOCATION *);
 GAME_STATE get_game_state(PLAYER *);
+void consume_newline(void);
 
 #endif

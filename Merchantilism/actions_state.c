@@ -93,3 +93,9 @@ GAME_STATE get_game_state(PLAYER *player) {
     
     return ONGOING;
 }
+void consume_newline(void) {
+    
+    while (getchar() != '\n') {
+        
+    }
+}
