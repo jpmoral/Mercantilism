@@ -102,8 +102,15 @@ void game (void) {
         
         if (end_turn == YES) {
             updateGameData(player, loc_array);
+            game_state = get_game_state(player);
         }
     }
+    
+    display_player_profile(player);
+    display_endgame_message(game_state);
+    consume_newline();
+    char c;
+    c = getchar();
 }
 
 void help(void) {
