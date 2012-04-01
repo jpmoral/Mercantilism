@@ -79,3 +79,17 @@ END_TURN sell_goods(PLAYER *player, LOCATION *loc) {
     
     return YES;
 }
+
+GAME_STATE get_game_state(PLAYER *player) {
+    
+    float net_balance = player->net_balance;
+    if (net_balance >= WINNING_BALANCE) {
+        return WIN;
+    }
+    
+    if (net_balance < LOSING_BALANCE) {
+        return LOSS;
+    }
+    
+    return ONGOING;
+}
