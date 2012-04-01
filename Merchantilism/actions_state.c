@@ -119,6 +119,7 @@ END_TURN invest(PLAYER *player) {
             printf("Not enough money.\nPress ENTER to continue: ");
             char c;
             c = getchar();
+            return NO;
             break;
         case YES:
             break;
