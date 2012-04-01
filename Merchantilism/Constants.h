@@ -149,4 +149,5 @@
 #define VALID_LOCATION_CHOICES "BRAEGPQ"
 #define VALID_BANK_ACTIONS "LPIWM"
 
+#define SYSTEM_CLEAR "clear"
 #endif
