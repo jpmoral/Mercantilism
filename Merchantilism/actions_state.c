@@ -60,16 +60,77 @@ END_TURN enter_location(PLAYER *player, LOCATION *location) {
 
 END_TURN take_out_loan(PLAYER *player) {
     
+    float cash = player->cash;
+    float debt = player->debt;
+    float amountToBorrow;
+    
+    printf("Amount to borrow: ");
+    scanf ("%f", &amountToBorrow);
+    
+    player->cash = cash + amountToBorrow;
+    player->debt = debt + amountToBorrow;
+    updatePlayerNetBalance(player);
+    
     return YES;
 }
 
 END_TURN pay_bank(PLAYER *player) {
     
+    float cash = player->cash;
+    float debt = player->debt;
+    float amountToPay;
+    
+    printf ("Amount to repay: ");
+    scanf ("%f", &amountToPay);
+    
+    VALID_AMOUNT canPay = checkPayment(amountToPay, cash, debt);
+    switch(canPay){
+        case NO:
+            system(SYSTEM_CLEAR);
+            consume_newline();
+            printf("Invalid amount.\nPress ENTER to continue: ");
+            char c;
+            c = getchar();
+            return NO;
+            break;
+        case YES:
+            break;
+    }
+    player->cash  = cash - amountToPay;
+    player->debt = debt - amountToPay;
+    updatePlayerNetBalance(player);
     return YES;
 }
 
 END_TURN invest(PLAYER *player) {
     
+    float inv =  player->investment;
+    float cash = player->cash;
+    float amountToInvest;
+    
+    printf("Amount to invest:\n");
+    scanf("%f", &amountToInvest);
+    
+    VALID_AMOUNT canInvest = checkInvestment(amountToInvest, cash);
+    switch(canInvest){
+        case NO: 
+            system(SYSTEM_CLEAR);
+            consume_newline();
+            printf("Not enough money.\nPress ENTER to continue: ");
+            char c;
+            c = getchar();
+            break;
+        case YES:
+            break;
+            
+    }
+    player->investment = inv + amountToInvest;
+    player->cash = cash - amountToInvest;
+    updatePlayerNetBalance(player);
+    
+    return YES;
+}
+
 END_TURN withdraw_investment(PLAYER *player) {
 
     return YES;
