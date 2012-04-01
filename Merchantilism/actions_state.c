@@ -133,6 +133,31 @@ END_TURN invest(PLAYER *player) {
 
 END_TURN withdraw_investment(PLAYER *player) {
 
+    float inv =  player->investment;
+    float cash = player->cash;
+    float amountToWithdraw;
+    
+    printf("Amount to withdraw: ");
+    scanf("%f", &amountToWithdraw);
+    
+    VALID_AMOUNT canWithdraw = is_investment_amount_valid(amountToWithdraw, inv);
+    switch(canWithdraw){
+        case NO: 
+            system(SYSTEM_CLEAR);
+            consume_newline();
+            printf("You don't have that much invested.\nPress ENTER to continue: ");
+            char c;
+            c = getchar();
+            return NO;
+            break;
+        case YES:
+            break;
+            
+    }
+    player->investment = inv - amountToWithdraw;
+    player->cash = cash + amountToWithdraw;
+    updatePlayerNetBalance(player);
+    
     return YES;
 }
 
