@@ -22,14 +22,22 @@ typedef enum {
     LOSS
 } GAME_STATE;
 
+typedef enum {
+    LUMBER,
+    STONE,
+    SILK,
+    ORE,
+    GEM
+} GOODS;
+
 END_TURN enter_bank(PLAYER *);
 END_TURN enter_location(PLAYER *, LOCATION *);
 END_TURN take_out_loan(PLAYER *);
 END_TURN withdraw_investment(PLAYER *);
 END_TURN pay_bank(PLAYER *);
 END_TURN invest(PLAYER *);
-END_TURN buy_goods(PLAYER *, LOCATION *);
-END_TURN sell_goods(PLAYER *, LOCATION *);
+END_TURN buy_goods(PLAYER *, LOCATION *, GOODS);
+END_TURN sell_goods(PLAYER *, LOCATION *, GOODS);
 GAME_STATE get_game_state(PLAYER *);
 VALID_AMOUNT is_investment_amount_valid(float, float);
 VALID_AMOUNT is_loan_payment_amount_valid(float, float, float);

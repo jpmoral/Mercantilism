@@ -162,12 +162,13 @@ END_TURN withdraw_investment(PLAYER *player) {
     return YES;
 }
 
-END_TURN buy_goods(PLAYER *player, LOCATION *loc) {
+END_TURN buy_goods(PLAYER *player, LOCATION *loc, GOODS goods) {
+    
     
     return YES;
 }
 
-END_TURN sell_goods(PLAYER *player, LOCATION *loc) {
+END_TURN sell_goods(PLAYER *player, LOCATION *loc, GOODS goods) {
     
     return YES;
 }
