@@ -351,6 +351,17 @@ VALID_AMOUNT is_purchase_valid(float cash, int amountToBuy, int amountAvailable,
     }
 }
 
+PICKPOCKET was_pocket_picked(PLAYER *player) {
+    
+    srand((unsigned)time(NULL));
+    int pickpocket_roll = rand()%100 + 1;
+    if (pickpocket_roll < 10) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 void consume_newline(void) {
     
     while (getchar() != '\n') {

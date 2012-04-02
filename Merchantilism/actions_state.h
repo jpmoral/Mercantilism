@@ -14,7 +14,7 @@
 typedef enum {
     NO,
     YES
-} END_TURN, VALID_AMOUNT;
+} END_TURN, VALID_AMOUNT, PICKPOCKET;
 
 typedef enum {
     ONGOING,
@@ -43,6 +43,7 @@ VALID_AMOUNT is_investment_amount_valid(float, float);
 VALID_AMOUNT is_loan_payment_amount_valid(float, float, float);
 VALID_AMOUNT is_withdrawal_amount_valid(float, float);
 VALID_AMOUNT is_purchase_valid(float, int, int, int);
+PICKPOCKET was_pocket_picked(PLAYER *);
 void consume_newline(void);
 
 #endif
