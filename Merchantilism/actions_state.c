@@ -55,7 +55,65 @@ END_TURN enter_bank(PLAYER *player) {
 
 END_TURN enter_location(PLAYER *player, LOCATION *location) {
     
-    return YES;
+    END_TURN end_turn = YES;
+    display_player_profile(player);
+    display_location_actions_menu(location);
+    char choice = '\0';
+    char *valid_choices = VALID_LOCATION_ACTIONS;
+    
+    while (!strpbrk(valid_choices, &choice)) {
+        choice = getchar();
+        choice = toupper(choice);
+    }
+    
+    switch (choice) {
+        case 'A':
+            end_turn = buy_goods(player, location, LUMBER);
+            return end_turn;
+            break;
+        case 'B':
+            end_turn = buy_goods(player, location, STONE);
+            return end_turn;
+            break;
+        case 'C':
+            end_turn = buy_goods(player, location, SILK);
+            return end_turn;
+            break;
+        case 'D':
+            end_turn = buy_goods(player, location, ORE);
+            return end_turn;
+            break;
+        case 'E':
+            end_turn = buy_goods(player, location, GEM);
+            return end_turn;
+            break;
+        case 'F':
+            end_turn = sell_goods(player, location, LUMBER);
+            return end_turn;
+            break;
+        case 'G':
+            end_turn = sell_goods(player, location, STONE);
+            return end_turn;
+            break;
+        case 'H':
+            end_turn = sell_goods(player, location, SILK);
+            return end_turn;
+            break;
+        case 'I':
+            end_turn = sell_goods(player, location, ORE);
+            return end_turn;
+            break;
+        case 'J':
+            end_turn = sell_goods(player, location, GEM);
+            return end_turn;
+            break;
+        case 'M':
+            
+            return NO;
+            break;
+    }
+    
+    return NO;
 }
 
 END_TURN take_out_loan(PLAYER *player) {
@@ -164,7 +222,77 @@ END_TURN withdraw_investment(PLAYER *player) {
 
 END_TURN buy_goods(PLAYER *player, LOCATION *loc, GOODS goods) {
     
+    float cash = player->cash;
+    int quantity_to_buy;
+    int available_stock;
+    int price;
+    int *player_inventory;
+    int *loc_inventory;
     
+    printf("Quantity to buy: ");
+    scanf("%i", &quantity_to_buy);
+    
+    switch (goods) {
+        case LUMBER:
+            available_stock = loc->lumber_available;
+            price = loc->lumber_price;
+            
+            player_inventory = &(player->lumber);
+            loc_inventory = &(loc->lumber_available);
+            break;
+        case STONE:
+            available_stock = loc->stone_available;
+            price = loc->stone_price;
+            
+            player_inventory = &(player->stone);
+            loc_inventory = &(loc->stone_available);
+            break;
+        case SILK:
+            available_stock = loc->silk_available;
+            price = loc->silk_price;
+            
+            player_inventory = &(player->silk);
+            loc_inventory = &(loc->silk_available);
+            break;
+        case ORE:
+            available_stock = loc->ore_available;
+            price = loc->ore_price;
+            
+            player_inventory = &(player->ore);
+            loc_inventory = &(loc->ore_available);
+            break;
+        case GEM:
+            available_stock = loc->gem_available;
+            price = loc->gem_price;
+            
+            player_inventory = &(player->gem);
+            loc_inventory = &(loc->gem_available);
+            break;
+        default:
+            break;
+    }
+    
+    
+    
+    VALID_AMOUNT transactionValid = is_purchase_valid(cash, quantity_to_buy, available_stock, price);
+    switch(transactionValid){
+        case NO: 
+            system(SYSTEM_CLEAR);
+            consume_newline();
+            printf("You can't buy that much.\nPress ENTER to continue: ");
+            char c;
+            c = getchar();
+            return NO;
+            break;
+        case YES:
+            break;
+            
+    }
+    
+    player->cash = cash - quantity_to_buy*price;
+    *player_inventory = *player_inventory + quantity_to_buy;
+    *loc_inventory = *loc_inventory - quantity_to_buy;
+    updatePlayerNetBalance(player);
     return YES;
 }
 
