@@ -273,7 +273,6 @@ END_TURN buy_goods(PLAYER *player, LOCATION *loc, GOODS goods) {
             break;
         case YES:
             break;
-            
     }
     
     player->cash = cash - quantity_to_buy*price;
@@ -285,6 +284,76 @@ END_TURN buy_goods(PLAYER *player, LOCATION *loc, GOODS goods) {
 
 END_TURN sell_goods(PLAYER *player, LOCATION *loc, GOODS goods) {
     
+    float cash = player->cash;
+    int quantity_to_sell;
+    int stock_on_hand;
+    int price;
+    int *player_inventory;
+    int *loc_inventory;
+    
+    printf("Quantity to sell: ");
+    scanf("%i", &quantity_to_sell);
+    
+    switch (goods) {
+        case LUMBER:
+            stock_on_hand = player->lumber;
+            price = loc->lumber_price;
+            
+            player_inventory = &(player->lumber);
+            loc_inventory = &(loc->lumber_available);
+            break;
+        case STONE:
+            stock_on_hand = player->stone;
+            price = loc->stone_price;
+            
+            player_inventory = &(player->stone);
+            loc_inventory = &(loc->stone_available);
+            break;
+        case SILK:
+            stock_on_hand = player->silk;
+            price = loc->silk_price;
+            
+            player_inventory = &(player->silk);
+            loc_inventory = &(loc->silk_available);
+            break;
+        case ORE:
+            stock_on_hand = player->ore;
+            price = loc->ore_price;
+            
+            player_inventory = &(player->ore);
+            loc_inventory = &(loc->ore_available);
+            break;
+        case GEM:
+            stock_on_hand = player->gem;
+            price = loc->gem_price;
+            
+            player_inventory = &(player->gem);
+            loc_inventory = &(loc->gem_available);
+            break;
+        default:
+            break;
+    }
+    
+    
+    
+    VALID_AMOUNT transactionValid = is_sale_valid(quantity_to_sell, stock_on_hand);
+    switch(transactionValid){
+        case NO: 
+            system(SYSTEM_CLEAR);
+            consume_newline();
+            printf("You can't sell that much.\nPress ENTER to continue: ");
+            char c;
+            c = getchar();
+            return NO;
+            break;
+        case YES:
+            break;
+    }
+    
+    player->cash = cash + quantity_to_sell*price;
+    *player_inventory = *player_inventory - quantity_to_sell;
+    *loc_inventory = *loc_inventory + quantity_to_sell;
+    updatePlayerNetBalance(player);
     return YES;
 }
 
