@@ -150,5 +150,5 @@
 #define VALID_BANK_ACTIONS "LPIWM"
 #define VALID_LOCATION_ACTIONS "ABCDEFGHIJM"
 
-#define SYSTEM_CLEAR "clear"
+#define SYSTEM_CLEAR "cls"
 #endif
