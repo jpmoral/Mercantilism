@@ -330,7 +330,7 @@ VALID_AMOUNT is_withdrawal_amount_valid(float amountToWithdraw, float investment
 }
 
 VALID_AMOUNT is_purchase_valid(float cash, int amountToBuy, int amountAvailable, int price) {
-    printf("cash: %f to buy: %i available: %i price %i\n",cash,amountToBuy,amountAvailable,price);
+    
     if (amountToBuy <= amountAvailable && cash >= amountToBuy*price) {
         return YES;
     } else {
