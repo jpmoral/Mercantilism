@@ -76,6 +76,29 @@ void display_bank_actions_menu(void) {
 
 void display_location_actions_menu(LOCATION *location) {
     
+    printf("\n");
+    printf("You are in %s.\n\n",location->name); 
+    display_location_stocks_and_prices(location);
+    printf("[A] Buy lumber    [F] Sell lumber\n");
+    printf("[B] Buy stone     [G] Sell stone\n");
+    printf("[C] Buy silk      [H] Sell silk\n");
+    printf("[D] Buy ore       [I] Sell ore\n");
+    printf("[E] Buy gems      [J] Sell gems\n");
+    printf("[M]ain Menu\n\n");
+    printf("What would you like to do?: ");
+}
+
+void display_location_stocks_and_prices(LOCATION *loc) {
+    
+    printf("\n");
+    printf("STOCKS AVAILABLE and MARKET PRICES:\n");
+    printf("========================\n");
+    printf("LUMBER: %i  PRICE: %i\n", loc->lumber_available, loc->lumber_price);
+    printf("STONE: %i  PRICE: %i\n", loc->stone_available, loc->stone_price);
+    printf("SILK: %i  PRICE: %i\n", loc->silk_available, loc->silk_price);
+    printf("ORE: %i  PRICE: %i\n", loc->ore_available, loc->ore_price);
+    printf("GEMS: %i  PRICE: %i\n", loc->gem_available, loc->gem_price);
+    printf("========================\n");
 }
 
 void display_endgame_message(GAME_STATE game_state) {

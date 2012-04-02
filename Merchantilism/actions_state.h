@@ -22,18 +22,29 @@ typedef enum {
     LOSS
 } GAME_STATE;
 
+typedef enum {
+    LUMBER,
+    STONE,
+    SILK,
+    ORE,
+    GEM
+} GOODS;
+
 END_TURN enter_bank(PLAYER *);
 END_TURN enter_location(PLAYER *, LOCATION *);
 END_TURN take_out_loan(PLAYER *);
 END_TURN withdraw_investment(PLAYER *);
 END_TURN pay_bank(PLAYER *);
 END_TURN invest(PLAYER *);
-END_TURN buy_goods(PLAYER *, LOCATION *);
-END_TURN sell_goods(PLAYER *, LOCATION *);
+END_TURN buy_goods(PLAYER *, LOCATION *, GOODS);
+END_TURN sell_goods(PLAYER *, LOCATION *, GOODS);
 GAME_STATE get_game_state(PLAYER *);
 VALID_AMOUNT is_investment_amount_valid(float, float);
 VALID_AMOUNT is_loan_payment_amount_valid(float, float, float);
 VALID_AMOUNT is_withdrawal_amount_valid(float, float);
+VALID_AMOUNT is_purchase_valid(float cash, int quantity_to_buy, int available_stock, int price);
+VALID_AMOUNT is_sale_valid(int quantity_to_sell, int stock_on_hand);
+void pickpocket_attempt(PLAYER *);
 void consume_newline(void);
 
 #endif
