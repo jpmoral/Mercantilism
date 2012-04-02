@@ -76,6 +76,18 @@ void display_bank_actions_menu(void) {
 
 void display_location_actions_menu(LOCATION *location) {
     
+    printf("\n");
+    printf("You are in %s.\n\n",location->name); 
+    display_location_stocks_and_prices(location);
+    printf("[A] Buy lumber    [F] Sell lumber\n");
+    printf("[B] Buy stone     [G] Sell stone\n");
+    printf("[C] Buy silk      [H] Sell silk\n");
+    printf("[D] Buy ore       [I] Sell ore\n");
+    printf("[E] Buy gems      [J] Sell gems\n");
+    printf("[M]ain Menu\n\n");
+    printf("What would you like to do?: ");
+}
+
 void display_location_stocks_and_prices(LOCATION *loc) {
     
     printf("\n");
