@@ -42,7 +42,8 @@ GAME_STATE get_game_state(PLAYER *);
 VALID_AMOUNT is_investment_amount_valid(float, float);
 VALID_AMOUNT is_loan_payment_amount_valid(float, float, float);
 VALID_AMOUNT is_withdrawal_amount_valid(float, float);
-VALID_AMOUNT is_purchase_valid(float, int, int, int);
+VALID_AMOUNT is_purchase_valid(float cash, int quantity_to_buy, int available_stock, int price);
+VALID_AMOUNT is_sale_valid(int quantity_to_sell, int stock_on_hand);
 void pickpocket_attempt(PLAYER *);
 void consume_newline(void);
 

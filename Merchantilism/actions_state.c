@@ -338,6 +338,15 @@ VALID_AMOUNT is_purchase_valid(float cash, int amountToBuy, int amountAvailable,
     }
 }
 
+VALID_AMOUNT is_sale_valid(int quantity_to_sell, int stock_on_hand) {
+    
+    if (quantity_to_sell <= stock_on_hand) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 void pickpocket_attempt(PLAYER *player) {
     
     srand((unsigned)time(NULL));
