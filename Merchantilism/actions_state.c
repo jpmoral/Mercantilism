@@ -343,6 +343,14 @@ void pickpocket_attempt(PLAYER *player) {
     int pickpocket_roll = rand()%100 + 1;
     if (pickpocket_roll < 10) {
         
+        system(SYSTEM_CLEAR);
+        consume_newline();
+        printf("\nYOU WERE ROBBED OF HALF YOUR CASH!\nPress ENTER to continue.");
+        player->cash = player->cash/2.0;
+        updatePlayerNetBalance(player);
+        char c;
+        c = getchar();
+        
         return;
     } else {
         return;
