@@ -99,6 +99,7 @@ END_TURN enter_location(PLAYER *player, LOCATION *location) {
             end_turn = NO;
             break;
     }
+    pickpocket_attempt(player);
     return end_turn;
 }
 
