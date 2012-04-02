@@ -32,25 +32,22 @@ END_TURN enter_bank(PLAYER *player) {
     switch (choice) {
         case 'L':
             end_turn = take_out_loan(player);
-            return end_turn;
             break;
         case 'P':
             end_turn = pay_bank(player);
-            return end_turn;
             break;
         case 'I':
             end_turn = invest(player);
-            return end_turn;
+            break;
         case 'W':
             end_turn = withdraw_investment(player);
-            return end_turn;
+            break;
         case 'M':
-            
-            return NO;
+            end_turn = NO;
             break;
     }
     
-    return NO;
+    return end_turn;
 }
 
 END_TURN enter_location(PLAYER *player, LOCATION *location) {
@@ -58,6 +55,7 @@ END_TURN enter_location(PLAYER *player, LOCATION *location) {
     END_TURN end_turn = YES;
     display_player_profile(player);
     display_location_actions_menu(location);
+    
     char choice = '\0';
     char *valid_choices = VALID_LOCATION_ACTIONS;
     
@@ -69,51 +67,39 @@ END_TURN enter_location(PLAYER *player, LOCATION *location) {
     switch (choice) {
         case 'A':
             end_turn = buy_goods(player, location, LUMBER);
-            return end_turn;
             break;
         case 'B':
             end_turn = buy_goods(player, location, STONE);
-            return end_turn;
             break;
         case 'C':
             end_turn = buy_goods(player, location, SILK);
-            return end_turn;
             break;
         case 'D':
             end_turn = buy_goods(player, location, ORE);
-            return end_turn;
             break;
         case 'E':
             end_turn = buy_goods(player, location, GEM);
-            return end_turn;
             break;
         case 'F':
             end_turn = sell_goods(player, location, LUMBER);
-            return end_turn;
             break;
         case 'G':
             end_turn = sell_goods(player, location, STONE);
-            return end_turn;
             break;
         case 'H':
             end_turn = sell_goods(player, location, SILK);
-            return end_turn;
             break;
         case 'I':
             end_turn = sell_goods(player, location, ORE);
-            return end_turn;
             break;
         case 'J':
             end_turn = sell_goods(player, location, GEM);
-            return end_turn;
             break;
         case 'M':
-            
-            return NO;
+            end_turn = NO;
             break;
     }
-    
-    return NO;
+    return end_turn;
 }
 
 END_TURN take_out_loan(PLAYER *player) {
