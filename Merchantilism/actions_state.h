@@ -14,7 +14,7 @@
 typedef enum {
     NO,
     YES
-} END_TURN, VALID_AMOUNT, PICKPOCKET;
+} END_TURN, VALID_AMOUNT;
 
 typedef enum {
     ONGOING,
