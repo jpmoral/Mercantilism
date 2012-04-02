@@ -214,11 +214,11 @@ void initialize_locations(LOCATION *loc_array[], int number_of_locations) {
     loc_array[4]->gem_max_price = PIRATE_COVE_GEM_MAX_PRICE;
 }
 
-void updateGameData(PLAYER *player, LOCATION *loc_array[]) {
+void updateGameData(PLAYER *player, LOCATION *loc_array[], int number_of_locations) {
     
     srand((unsigned)time(NULL));
     int i;
-    for (i = 0; i < 1; i++) {
+    for (i = 0; i < number_of_locations; i++) {
         
         loc_array[i]->lumber_available = loc_array[i]->lumber_available + rand()%(loc_array[i]->lumber_max_restock - loc_array[i]->lumber_min_restock) + loc_array[i]->lumber_min_restock;
         loc_array[i]->stone_available = loc_array[i]->stone_available + rand()%(loc_array[i]->stone_max_restock - loc_array[i]->stone_min_restock) + loc_array[i]->stone_min_restock;
