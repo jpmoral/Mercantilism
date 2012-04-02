@@ -26,7 +26,7 @@ typedef struct {
 
 void initialize_player(PLAYER *);
 void initialize_locations(LOCATION *[], int numer_of_locations);
-void updateGameData(PLAYER *, LOCATION *[]);
+void updateGameData(PLAYER *, LOCATION *[], int);
 void updatePlayerNetBalance(PLAYER *);
 
 #endif

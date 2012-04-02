@@ -101,7 +101,7 @@ void game (void) {
         }
         
         if (end_turn == YES) {
-            updateGameData(player, loc_array);
+            updateGameData(player, loc_array, NUMBER_OF_LOCATIONS);
             game_state = get_game_state(player);
         }
     }
