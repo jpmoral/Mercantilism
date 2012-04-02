@@ -18,6 +18,7 @@ void display_help(void);
 void display_destination_choice_menu(LOCATION *[], int);
 void display_bank_actions_menu(void);
 void display_location_actions_menu(LOCATION *);
+void display_location_stocks_and_prices(LOCATION *);
 void display_endgame_message(GAME_STATE);
 
 #endif

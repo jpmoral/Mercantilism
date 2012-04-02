@@ -76,6 +76,17 @@ void display_bank_actions_menu(void) {
 
 void display_location_actions_menu(LOCATION *location) {
     
+void display_location_stocks_and_prices(LOCATION *loc) {
+    
+    printf("\n");
+    printf("STOCKS AVAILABLE and MARKET PRICES:\n");
+    printf("========================\n");
+    printf("LUMBER: %i  PRICE: %i\n", loc->lumber_available, loc->lumber_price);
+    printf("STONE: %i  PRICE: %i\n", loc->stone_available, loc->stone_price);
+    printf("SILK: %i  PRICE: %i\n", loc->silk_available, loc->silk_price);
+    printf("ORE: %i  PRICE: %i\n", loc->ore_available, loc->ore_price);
+    printf("GEMS: %i  PRICE: %i\n", loc->gem_available, loc->gem_price);
+    printf("========================\n");
 }
 
 void display_endgame_message(GAME_STATE game_state) {
