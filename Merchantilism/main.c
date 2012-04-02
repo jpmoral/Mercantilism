@@ -111,6 +111,13 @@ void game (void) {
     consume_newline();
     char c;
     c = getchar();
+    
+    free(player);
+    
+    int i;
+    for (i = 0; i < NUMBER_OF_LOCATIONS; i++) {
+        free(loc_array[i]);
+    }
 }
 
 void help(void) {
