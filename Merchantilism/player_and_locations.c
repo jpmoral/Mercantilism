@@ -17,6 +17,7 @@ void initialize_player(PLAYER *player) {
     player->cash = PLAYER_STARTING_MONEY;
     player->debt = PLAYER_STARTING_DEBT;
     player->investment = 0;
+    player->lumber = player->stone = player->silk = player->ore = player->gem = 0;
     updatePlayerNetBalance(player);
 }
 
